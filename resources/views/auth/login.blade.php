@@ -25,6 +25,10 @@
 
         <button type="submit" class="login-btn">Login</button>
 
+        <div class="loading" style="display: none;">
+            Processing your login...
+        </div>
+
         <div class="login-footer">
             <p>Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
         </div>

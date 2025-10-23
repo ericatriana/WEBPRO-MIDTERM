@@ -1,0 +1,73 @@
+{
+    "version": 2,
+    "framework": null,
+    "buildCommand": "",
+    "outputDirectory": "public",
+    "functions": {
+        "api/*.php": {
+            "runtime": "vercel-php@0.7.4"
+        }
+    },
+    "routes": [
+        {
+            "src": "/css/(.*)",
+            "dest": "/public/css/$1",
+            "headers": {
+                "Cache-Control": "public, max-age=86400"
+            }
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/public/js/$1",
+            "headers": {
+                "Cache-Control": "public, max-age=86400"
+            }
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/public/images/$1",
+            "headers": {
+                "Cache-Control": "public, max-age=86400"
+            }
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_KEY": "base64:J8saLnWwsQPgil7GZouMlBJJlJpciFD1YCunv4a5kBc=",
+        "APP_URL": "https://webpro-midterm-khd2m6u9t-erica-trianas-projects.vercel.app",
+        "FORCE_HTTPS": "true",
+        "APP_FORCE_HTTPS": "true",
+
+        "DB_CONNECTION": "sqlite",
+        "DB_DATABASE": "/tmp/database.sqlite",
+
+        "CACHE_DRIVER": "array",
+        "SESSION_DRIVER": "cookie",
+        "SESSION_LIFETIME": "120",
+        "SESSION_ENCRYPT": "false",
+        "SESSION_COOKIE_SECURE": "true",
+        "SESSION_COOKIE_HTTPONLY": "true",
+        "SESSION_COOKIE_SAMESITE": "lax",
+        "QUEUE_CONNECTION": "sync",
+        "BROADCAST_DRIVER": "log",
+        "MAIL_MAILER": "log",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+
+        "LOG_CHANNEL": "stderr"
+    }
+}
